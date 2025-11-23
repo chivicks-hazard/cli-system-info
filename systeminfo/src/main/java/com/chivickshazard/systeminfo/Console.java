@@ -17,21 +17,47 @@ public class Console {
         System.out.println("3. Memory Status");
 
         System.out.print("Enter your choice: ");
-        int choice = input.nextInt();
+        String choice = input.nextLine();
 
         System.out.println("");
 
-        if (choice == 1) {
-            Time();
-        } else if (choice == 2) {
-            Power();
-        } else if (choice == 3) {
-            Memory();
-        }
-
+        Action(input, choice);
 
         input.close();
         System.out.println("Thank you for your time!");
+    }
+
+    static void Action (Scanner scanner, String choice) {
+        while(!choice.equalsIgnoreCase("no")) {
+            switch (choice) {
+                case "1":
+                    Time();
+                    break;
+
+                case "2":
+                    Power();
+                    break;
+
+                case "3":
+                    Memory();
+                    break;
+            
+                default:
+                    break;
+            }
+
+            System.out.println("Do you still want to convert? Type 'no' to exit.");
+            choice = input.nextLine();
+            if (!choice.equalsIgnoreCase("no")) {
+                System.out.println("Select an option: ");
+                System.out.println("1. Date and Time");
+                System.out.println("2. Power Status");
+                System.out.println("3. Memory Status");
+                choice = input.nextLine();
+            }
+        }
+
+        System.out.println("Thank you for using our application :)");
     }
 
     // For displaying time data

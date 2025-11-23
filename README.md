@@ -6,4 +6,11 @@ This is another hobby project I have decided to build this year. What prompted m
 
 This project will be updated as time goes on. Hopefully, this doesn't enter the valley of unfinished projects :sweat_smile:
 
+In order to run the application, clone the repository and run the following commands in your terminal:
+
+```shell
+mvn clean install
+mvn compile exec:java
+```
+
 You can view the changelog by clicking [here](CHANGELOG.md).
